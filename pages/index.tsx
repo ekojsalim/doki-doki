@@ -236,6 +236,7 @@ const Home: NextPage = () => {
               </tr>
             </thead>
             <tbody>
+              //@ts-ignore
               {tableMap[imageType].map(({ method, psnr, ssim }) => (
                 <tr className="border border-black">
                   <th scope="row" className="border border-black px-2">
