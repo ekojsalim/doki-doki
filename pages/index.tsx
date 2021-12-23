@@ -217,7 +217,7 @@ const Home: NextPage = () => {
             onChange={(e) => setImageType(e.target.value)}
           >
             {typeAndLabels.map(({ type, label }) => (
-              <option value={type}>{label}</option>
+              <option value={type} key={type}>{label}</option>
             ))}
           </select>
           <table className="table-auto border border-black border-collapse mt-4">
@@ -236,9 +236,8 @@ const Home: NextPage = () => {
               </tr>
             </thead>
             <tbody>
-              //@ts-ignore
               {tableMap[imageType].map(({ method, psnr, ssim }) => (
-                <tr className="border border-black">
+                <tr className="border border-black" key={method}>
                   <th scope="row" className="border border-black px-2">
                     {method}
                   </th>
@@ -260,7 +259,7 @@ const Home: NextPage = () => {
             onChange={(e) => setFirstImage(e.target.value)}
           >
             {methodAndLabels.map(({ method, label }) => (
-              <option value={method}>{label}</option>
+              <option value={method} key={method}>{label}</option>
             ))}
           </select>
 
@@ -269,7 +268,7 @@ const Home: NextPage = () => {
             onChange={(e) => setSecondImage(e.target.value)}
           >
             {methodAndLabels.map(({ method, label }) => (
-              <option value={method}>{label}</option>
+              <option value={method} key={method}>{label}</option>
             ))}
           </select>
         </div>
